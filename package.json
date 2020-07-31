@@ -20,7 +20,6 @@
   },
   "author": "Ken Chen <blair1226@msn.com>",
   "license": "MIT",
-  "type": "module",
   "dependencies": {
     "@fidm/x509": "^1.2.1",
     "asn1js": "^2.0.26",

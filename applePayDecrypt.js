@@ -7,7 +7,7 @@ const asn1js = require('asn1js');
 const pkijs = require('pkijs');
 const Crypto = require('node-webcrypto-ossl');
 
-const __dirname = path.resolve();
+const dirname = __dirname;
 const crypto = new Crypto.Crypto()
 const TOKEN_EXPIRE_WINDOW = Infinity; // should be set to serveral minute per apple
 pkijs.setEngine(
@@ -22,7 +22,7 @@ const SIGNINGTIME_OID = '1.2.840.113549.1.9.5';
 const MERCHANT_ID_FIELD_OID = '1.2.840.113635.100.6.32';
 
 const AppleRootCABuffer = fs.readFileSync(
-  path.join(__dirname, './AppleRootCA-G3.cer')
+  path.join(dirname, './AppleRootCA-G3.cer')
 );
 const AppleRootCAASN1 = asn1js.fromBER(new Uint8Array(AppleRootCABuffer).buffer);
 const AppleRootCA = new pkijs.Certificate({ schema: AppleRootCAASN1.result });
@@ -252,4 +252,4 @@ class ApplePayPaymentToken {
   }
 }
 
-export default ApplePayPaymentToken;
+module.exports = ApplePayPaymentToken;
