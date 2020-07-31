@@ -1,11 +1,11 @@
-import * as cryptoNative from 'crypto';
-import fs from 'fs';
-import path from 'path';
-import ECKey from 'ec-key';
-import x509 from '@fidm/x509';
-import asn1js from 'asn1js';
-import pkijs from 'pkijs'
-import Crypto from 'node-webcrypto-ossl';
+const cryptoNative = require('crypto');
+const fs = require('fs');
+const path = require('path');
+const ECKey = require('ec-key');
+const x509 = require('@fidm/x509');
+const asn1js = require('asn1js');
+const pkijs = require('pkijs');
+const Crypto = require('node-webcrypto-ossl');
 
 const __dirname = path.resolve();
 const crypto = new Crypto.Crypto()
